@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  width: 100svw;
+  justify-content: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30svw;
+}
+#textArea {
+  height: 50svh;
+}
