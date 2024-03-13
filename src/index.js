@@ -14,7 +14,7 @@ function handleSubmit(e) {
   const banco = document.querySelector("#banco").value;
   const bankId = document.querySelector("#bankId").value;
 
-  const agencia = document.querySelector("#agencia");
+/*   const agencia = document.querySelector("#agencia");
   const conta = document.querySelector("#conta");
   const account = `${agencia.value}${conta.value.replace(/[.,-]/g, "")}`;
   console.log(account);
@@ -35,5 +35,5 @@ function handleSubmit(e) {
     firstData,
     lastData,
     saldo
-  );
+  ); */
 }
