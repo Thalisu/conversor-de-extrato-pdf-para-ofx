@@ -74,9 +74,9 @@ export default class PDFDataFormatter {
 
       return {
         date: groups[1].trim().split("/").reverse().join(""),
-        desc: groups[2].trim(),
+        desc: groups[2],
         amount: this.#treatValues(
-          `${groups[3].trim() || ""}${groups[4].trim()}`
+          `${groups[3]?.trim() || ""}${groups[4].trim()}`
         ),
       };
     });
