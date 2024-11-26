@@ -30,5 +30,13 @@ function handleSubmit(e) {
 
   const saldo = document.querySelector("#saldo").value;
 
-  formatData(data, bank.name, bank.id, account, firstDate, lastDate, saldo);
+  formatData(
+    data,
+    bank.name,
+    bank.id,
+    account,
+    firstDate.trim(),
+    lastDate.trim(),
+    saldo
+  );
 }
