@@ -4,7 +4,6 @@ export default function formatData(
   banco,
   bankId,
   account,
-  ano,
   firstData,
   lastData,
   saldo
@@ -51,16 +50,16 @@ export default function formatData(
                       <DTSTART>${firstData}000000[-3:GMT]
                       <DTEND>${lastData}000000[-3:GMT]
                         ${data
-                          .map((value) => {
-                            const data = value[0].replace("/", "");
-                            return `<STMTTRN>
+                          .map(
+                            (values) =>
+                              `<STMTTRN>
                             <TRNTYPE>OTHER
-                            <DTPOSTED>${ano}${data}000000[-3:GMT]
-                            <TRNAMT>${value[2]}
+                            <DTPOSTED>${values.date}000000[-3:GMT]
+                            <TRNAMT>${values.amount}
                             <PAYEEID>0
-                            <MEMO>${value[1]}
-                            </STMTTRN>`;
-                          })
+                            <MEMO>${values.desc}
+                            </STMTTRN>`
+                          )
                           .join("")}
                   </BANKTRANLIST>
                   <LEDGERBAL>
