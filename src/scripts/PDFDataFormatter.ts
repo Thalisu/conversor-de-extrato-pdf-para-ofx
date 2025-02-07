@@ -71,6 +71,10 @@ export default class PDFDataFormatter {
 
       if (!groups[3]) return null;
 
+      if (groups[3].includes("-")) {
+        groups[3] = `-${groups[3].replace(/-/g, "")}`;
+      }
+
       return {
         date: date.trim(),
         desc: desc.trim(),
