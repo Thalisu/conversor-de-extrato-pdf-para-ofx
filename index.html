@@ -1,32 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles.css" />
-    <title>Conversor PDF - OFX</title>
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <script type="module" src="./src/app.js" defer></script>
-    <div class="container">
-      <form class="formContainer">
-        <label for="textArea">EXTRATO:</label>
-        <textarea id="textArea" required></textarea>
-        <label for="banco">Banco:</label>
-        <select type="text" id="banco" required>
-          <option value='{"id": "033", "name": "SANTANDER"}'>Santander</option>
-          <option value='{"id": "756", "name": "SICOOB"}'>Sicoob</option>
-        </select>
-        <label for="agencia">Agencia:</label>
-        <input type="text" id="agencia" required />
-        <label for="conta">Conta:</label>
-        <input type="text" id="conta" required />
-        <label for="ano">Ano:</label>
-        <input type="text" id="ano" required />
-        <label for="saldo">Saldo:</label>
-        <input type="text" id="saldo" required />
-        <button type="submit">converter</button>
-      </form>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
