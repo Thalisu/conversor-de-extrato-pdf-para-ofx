@@ -72,9 +72,9 @@ export default class PDFDataFormatter {
       if (!groups[3]) return null;
 
       return {
-        date: date,
-        desc: desc,
-        amount: this.#treatValues(`${groups[3]?.trim() || ""}`),
+        date: date.trim(),
+        desc: desc.trim(),
+        amount: this.#treatValues(groups[3].trim()),
       };
     });
 

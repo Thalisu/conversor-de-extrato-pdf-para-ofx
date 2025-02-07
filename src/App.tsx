@@ -46,7 +46,9 @@ function App() {
           id="agencia"
           required
           value={data.agency}
-          onChange={(e) => setData({ ...data, agency: e.currentTarget.value })}
+          onChange={(e) =>
+            setData({ ...data, agency: e.currentTarget.value.trim() })
+          }
         />
         <label htmlFor="conta">Conta:</label>
         <input
@@ -54,7 +56,9 @@ function App() {
           id="conta"
           required
           value={data.account}
-          onChange={(e) => setData({ ...data, account: e.currentTarget.value })}
+          onChange={(e) =>
+            setData({ ...data, account: e.currentTarget.value.trim() })
+          }
         />
         <label htmlFor="ano">Ano:</label>
         <input
@@ -62,7 +66,9 @@ function App() {
           id="ano"
           required
           value={data.year}
-          onChange={(e) => setData({ ...data, year: e.currentTarget.value })}
+          onChange={(e) =>
+            setData({ ...data, year: e.currentTarget.value.trim() })
+          }
         />
         <label htmlFor="saldo">Saldo:</label>
         <input
@@ -70,7 +76,9 @@ function App() {
           id="saldo"
           required
           value={data.balance}
-          onChange={(e) => setData({ ...data, balance: e.currentTarget.value })}
+          onChange={(e) =>
+            setData({ ...data, balance: e.currentTarget.value.trim() })
+          }
         />
         <button type="submit">converter</button>
       </form>
