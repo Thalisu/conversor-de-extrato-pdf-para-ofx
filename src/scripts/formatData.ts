@@ -9,6 +9,7 @@ export default function formatData(
   saldo: string,
   ano: string
 ) {
+  console.log(data);
   const formatedData = `OFXHEADER:100
   DATA:OFXSGML
   VERSION:102

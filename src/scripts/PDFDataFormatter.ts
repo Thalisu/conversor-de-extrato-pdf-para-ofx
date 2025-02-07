@@ -23,7 +23,16 @@ export default class PDFDataFormatter {
   santander(): { date: string; desc: string; amount: string }[] {
     const santanderRegex =
       /\b(?:(\d{2}\/\d{2})\s)?([\W\w]*?)(\d{1,3}(?:\.\d{3})*,\d{2}-?)/;
-    const skippableValues = ["Créditos", "Saldo", "Débitos", "Saldo"];
+    const skippableValues = [
+      "Créditos",
+      "Saldo",
+      "Débitos",
+      "SALDO",
+      "saldo",
+      "Sim",
+      "Débito",
+      "Acumulado",
+    ];
 
     let prevDate: string | null = null;
 
@@ -58,7 +67,9 @@ export default class PDFDataFormatter {
       }
 
       const desc = groups[2]?.replace(/[0-9/\n-]/g, "");
-      if (desc === "") return null;
+      if (desc === "" || desc.replace(/\s/g, "") === "") return null;
+
+      if (!groups[3]) return null;
 
       return {
         date: date,
