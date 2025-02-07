@@ -26,7 +26,7 @@ export default function formatData(
                   <CODE>0
                   <SEVERITY>INFO
               </STATUS>
-              <DTSERVER>${lastData}000000[-3:GMT]
+              <DTSERVER>${lastData}000000[0:GMT]
               <LANGUAGE>ENG
               <FI>
                   <ORG>${banco}
@@ -49,8 +49,8 @@ export default function formatData(
                       <ACCTTYPE>CHECKING
                   </BANKACCTFROM>
                   <BANKTRANLIST>
-                      <DTSTART>${firstData}000000[-3:GMT]
-                      <DTEND>${lastData}000000[-3:GMT]
+                      <DTSTART>${firstData}000000[0:GMT]
+                      <DTEND>${lastData}000000[0:GMT]
                         ${data
                           .map(
                             (values) =>
@@ -60,7 +60,7 @@ export default function formatData(
                               values.date.length === 8
                                 ? values.date
                                 : `${ano}${values.date}`
-                            }000000[-3:GMT]
+                            }000000[0:GMT]
                             <TRNAMT>${values.amount}
                             <PAYEEID>0
                             <MEMO>${values.desc}
@@ -70,7 +70,7 @@ export default function formatData(
                   </BANKTRANLIST>
                   <LEDGERBAL>
                       <BALAMT>${saldo}
-                      <DTASOF>${lastData}000000[-3:GMT]
+                      <DTASOF>${lastData}000000[0:GMT]
                   </LEDGERBAL>
               </STMTRS>
           </STMTTRNRS>

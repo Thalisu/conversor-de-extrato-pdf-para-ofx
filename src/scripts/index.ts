@@ -27,8 +27,7 @@ export default function handleSubmit(e: React.FormEvent, formData: IFormData) {
 
   const lastDate = `${
     data[data.length - 1].date.length === 8 ? "" : formData.year
-  }
-  ${data[data.length - 1].date}
+  }${data[data.length - 1].date}
   `;
 
   const saldo = formData.balance;
